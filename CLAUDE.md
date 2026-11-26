@@ -44,8 +44,14 @@ Build in this order, one commit per step, each with lint, typecheck and a few un
 
 ## Running the app
 
-On the owner's Mac: `pnpm install`, then `cd apps/mobile && npx expo start`. Press `i` for the iOS Simulator
-(needs Xcode), `a` for the Android emulator, or scan the QR code with Expo Go on a phone on the same Wi-Fi.
+The owner has no Mac: the app is built on a Linux VPS and tested on the owner's own phone. No iOS Simulator (it
+needs a Mac).
+
+- **Steps 1, 3 and 4:** `pnpm install`, then `cd apps/mobile && npx expo start --tunnel`, and scan the QR code with
+  the free Expo Go app on the phone (the tunnel lets the phone reach the VPS).
+- **Step 2 on:** Privy's SDK uses native code, so it does not run in Expo Go or on the web. The app then needs a
+  development build (EAS Build, Expo's cloud builder; free plan) installed on the phone. Android: an APK, free.
+  iPhone: needs an Apple Developer account (99 USD a year); ask the owner before anything that costs money.
 
 ## Not here
 
